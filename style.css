@@ -1,0 +1,451 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/roboto-v30-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/roboto-v30-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/roboto-v30-latin-700.woff2') format('woff2');
+}
+
+:root {
+    --gray-light: #fafaf9;
+    --gray-medium: #e7e5e4;
+    --gray-dark: #78716c;
+    --black: #292524;
+    --sidebar-bg: #336699;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto';
+    color: var(--black);
+    display: grid;
+    grid-template-columns: 275px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar content";
+}
+
+/* --- --- --- --- --- SIDEBAR --- --- --- --- --- --- */
+.sidebar {
+    padding: 20px;
+    color: var(--gray-light);
+    background-color: var(--sidebar-bg);
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    row-gap: 40px;
+}
+
+.sidebarTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    align-items: center;
+    column-gap: 10px;
+}
+
+.sidebarTitle>.material-icons {
+    font-size: 2.45rem;
+}
+
+.nav {
+    font-size: 1.25rem;
+    display: grid;
+    row-gap: 20px;
+}
+
+.navItem a {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    align-items: center;
+    column-gap: 17px;
+}
+
+.navItem a:hover {
+    transform: scale(1.07);
+}
+
+.navItem .material-icons-outlined {
+    padding-left: 2.25px;
+    font-size: 1.85rem;
+}
+
+/* --- --- --- --- --- HEADER --- --- --- --- --- --- */
+.header {
+    padding: 20px 40px;
+    background-color: var(--gray-light);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    z-index: 10;
+    grid-area: header;
+    display: grid;
+    row-gap: 40px;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.search > label {
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+}
+
+.search > label:hover {
+    transform: scale(1.07);
+}
+
+.search .material-icons-outlined {
+    font-size: 1.8rem;
+}
+
+.search > input {
+    width: clamp(240px, 75%, 750px);
+    border: 0;
+    border-radius: 100px;
+    padding: 12px 24px;
+    background-color: var(--gray-medium);
+    outline-color:  var(--sidebar-bg);
+}
+
+.account {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 25px;
+    align-items: center;
+}
+
+.account button {
+    display: grid;
+    align-items: center;
+}
+
+.account button:hover {
+    transform: scale(1.07);
+}
+
+.account .material-icons-outlined {
+    font-size: 1.8rem;
+}
+
+.account .photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url(./assets/images/WhatsAppImage2024-06-18at10.16.27.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.account .photo:hover {
+    transform: scale(1.07);
+}
+
+.account .name {
+    cursor: pointer;
+    margin-left: -12.5px;
+}
+
+.account .name:hover {
+    transform: scale(1.07);
+}
+
+.bottom {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    column-gap: 40px;
+    align-items: center;
+}
+
+.profile {
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 17.5px;
+    align-items: center;
+}
+
+.profile .photo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-image: url(./assets/images/WhatsAppImage2024-06-18at10.16.27.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.profile .photo:hover {
+    transform: scale(1.07);
+}
+
+.profile .greeting {
+    margin-bottom: 5px;
+}
+
+.profile .name {
+    font-size: 1.6rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 25px
+}
+
+.btn {
+    padding: 12px 36.8px;
+    border-radius: 150px;
+    font-weight: 500;
+    color: var(--gray-light);
+    background-color: var(--sidebar-bg);
+}
+
+.btn:hover {
+    transform: scale(1.07);
+}
+
+/* --- --- --- --- --- CONTENT --- --- --- --- --- --- */
+.content {
+    padding: 30px;
+    background-color: var(--gray-medium);;
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 275px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "projects announcements"
+    "projects trending";
+    gap: 30px;
+}
+
+.sectionTitle {
+    margin-bottom: 7.5px;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 7.5px;
+    background-color: var(--gray-light);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);;
+}
+
+.cardText {
+    color: var(--gray-dark);
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.projects .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 213px;
+    gap: 20px;
+}
+
+.projects .card {
+    border-left: 10px solid #ec2700;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+.projects .cardTitle {
+    margin-bottom: 2.5px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.projects .cardTitle:hover {
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+.projects .cardText {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.actions {
+    place-self: end end;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+}
+
+.actions > button {
+    display: grid;
+    align-items: end;
+}
+
+.actions > button:hover {
+    transform: scale(1.07);
+}
+
+.actions .material-icons-outlined {
+    font-size: 1.75rem;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.announcement {
+    padding: 12.5px 0;
+}
+  
+.announcement:first-child {
+    padding-top: 0px;
+}
+  
+.announcement:last-child {
+    padding-bottom: 0px;
+}
+
+.announcement .cardTitle {
+    margin-bottom: 2.5px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.announcement .cardTitle:hover {
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+.announcement .cardText {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.announcement + .announcement {
+    border-top: 1.5px solid var(--gray-medium);
+}
+
+.trending {
+    grid-area: trending;
+    align-self: start;
+}
+
+.trend {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.trend:hover {
+    transform: scale(1.03);
+}
+
+.trend + .trend {
+    margin-top: 22.5px;
+}
+
+.trend .photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.trend .description {
+    font-size: 0.9rem;
+}
+
+.trend .username {
+    font-weight: 500;
+    margin-bottom: 2.5px;
+}
+
+.trend-1 .photo {
+    background-image: url(./assets/images/WhatsAppImage2024-06-18at03.53.37.jpeg);
+}
+
+.trend-2 .photo {
+    background-image: url(./assets/images/WhatsAppImage2024-06-18at10.16.27.jpeg);
+}
+.trend-3 .photo {
+    background-image: url(./assets/images/baa20698931623.5ee79b6a8ec2b.jpg);
+}
+.trend-4 .photo {
+    background-image: url(./assets/images/WhatsAppImage2024-06-18at10.16.28.jpeg);
+}
