@@ -308,7 +308,7 @@ body {
 .projects .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: 213px;
+    grid-auto-rows: 225px;
     gap: 20px;
 }
 
@@ -332,7 +332,7 @@ body {
 
 .projects .cardText {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -399,7 +399,7 @@ body {
 
 .trending {
     grid-area: trending;
-    align-self: start;
+    align-self: end;
 }
 
 .trend {
